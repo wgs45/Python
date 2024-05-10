@@ -120,7 +120,8 @@ for index in range(5):
 
 print("-------------------------")
 
-# enumerate => a built-in function in python that allows you to keep track of the number of iterations (loops) in a loop.
+# enumerate => a built-in function in python that allows you to keep 
+# track of the number of iterations (loops) in a loop.
 print(list(enumerate(animal_list_1)))
 
 animal_list_2 = ['dog', 'cat', 'monkey', 'bird', 'elephant']
