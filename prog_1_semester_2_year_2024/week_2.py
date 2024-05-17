@@ -47,11 +47,13 @@ print(fruit_1)
 print("-------------------------")
 
 # set
-capitals_1 = {"Jakarta", "Bangkok", "Kuala Lumpur", "Washington DC", "Tokyo", "Seoul"}
+capitals_1 = {"Jakarta", "Bangkok", "Kuala Lumpur",
+              "Washington DC", "Tokyo", "Seoul"}
 print(capitals_1)
 
 # dictionary
-language_1 = {"name": "Python", "version": "3.12", "types": ["int", "float", "str", "bool"]}
+language_1 = {"name": "Python", "version": "3.12",
+              "types": ["int", "float", "str", "bool"]}
 print(language_1)
 print(language_1["name"])
 print(language_1["types"])
@@ -84,7 +86,7 @@ while True:
 
 print("-------------------------")
 
-# while continue loop 
+# while continue loop
 while n < 10:
     n += 1
     if n % 3 == 0:
@@ -120,8 +122,7 @@ for index in range(5):
 
 print("-------------------------")
 
-# enumerate => a built-in function in python that allows you to keep 
-# track of the number of iterations (loops) in a loop.
+# enumerate => a built-in function in python that allows you to keep track of the number of iterations (loops) in a loop.
 print(list(enumerate(animal_list_1)))
 
 animal_list_2 = ['dog', 'cat', 'monkey', 'bird', 'elephant']
@@ -130,8 +131,8 @@ for index, item in enumerate(animal_list_2):
 
 print("-------------------------")
 
-# zip => used to combine two or more iterable dictionaries into a single iterable, 
-# where corresponding elements from the input iterable are paired together as tuples. 
+# zip => used to combine two or more iterable dictionaries into a single iterable,
+# where corresponding elements from the input iterable are paired together as tuples.
 index_list_1 = ['a', 'b', 'c', 'd', 'e']
 animal_list_3 = ['dog', 'cat', 'monkey', 'bird', 'elephant']
 print(list(zip(index_list_1, animal_list_3)))
@@ -152,11 +153,10 @@ fruits_2 = {
     'banana': 'yellow',
     'guava': 'green',
     'papaya': 'orange',
+    'strawberry': 'red'
 }
 
 print(list(fruits_2.items()))
 
 for name, colors in fruits_2.items():
     print(name, 'is', color)
-
-
