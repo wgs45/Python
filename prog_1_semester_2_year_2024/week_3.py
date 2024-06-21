@@ -66,3 +66,80 @@ print(text_2.upper())
 print(text_2.lower())
 
 print("-------------------------")
+
+print("Using format method")
+fruits_1 = [
+    ['apple', 6],
+    ['banana', 2],
+    ['guava', 3],
+]
+
+for name, num in fruits_1:
+    print("There are {} {}".format(num, name))
+
+for name, num in fruits_1:
+    print(f"There are {num} {name}")
+
+print("-------------------------")
+
+print("Using function method")
+
+
+def sing():
+    print("Sing!")
+
+
+sing()
+
+
+def sing(name):
+    print("{}, Sing!".format(name))
+
+
+sing("Alpha")
+
+
+def sing(name, verb):
+    print("{}, {}".format(name, verb))
+
+
+sing("Alpha", "Sing!")
+
+
+print("-------------------------")
+
+print("Using function method with operation")
+
+
+def mod(a, b):
+    return a % b
+
+
+print(mod(20, 7))
+
+print("-------------------------")
+
+
+def mod(a, b):
+    q = a // b
+    r = a % b
+    return q, r
+
+
+x, y = mod(20, 7)
+print("x = {}, y = {}".format(x, y))
+
+print("-------------------------")
+
+
+def sing(name="alpha", verb="sing"):
+    print("{}, please {}!".format(name, verb))
+
+
+sing("Alpha", "sing")
+sing(verb="talk", name="alpha")
+sing("Alpha")
+sing("dance")
+sing()
+
+print("-------------------------")
