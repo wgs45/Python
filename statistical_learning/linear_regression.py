@@ -1,21 +1,60 @@
-from sklearn.linear_model import LinearRegression
 import numpy as np
 
-# Initialize the model
-model = LinearRegression()
 
-# User input
-# Example: [[1], [2]]
-X = np.array(eval(input("Enter training data (X) as a 2D list: ")))
-# Example: [3, 5]
-y = np.array(eval(input("Enter target values (y) as a list: ")))
+def linear_regression(X, y, learning_rate=0.01, iterations=1000):
+    # Initialize parameters
+    m = 0  # Slope
+    b = 0  # Intercept
+    n = len(X)  # Number of data points
 
-# Fit the model
-model.fit(X, y)
+    # Gradient Descent
+    for _ in range(iterations):
+        # Predictions
+        y_pred = m * X + b
 
-# Test input
-test_data = np.array(
-    eval(input("Enter test data as a 2D list: ")))  # Example: [[3]]
-predictions = model.predict(test_data)
+        # Calculate Gradients
+        dm = (-2 / n) * np.sum(X * (y - y_pred))
+        db = (-2 / n) * np.sum(y - y_pred)
 
-print("Predictions:", predictions)
+        # Update Parameters
+        m -= learning_rate * dm
+        b -= learning_rate * db
+
+    return m, b
+
+
+def get_user_input():
+    print("Enter the number of data points:")
+    n = int(input())
+
+    print(f"Enter {n} values for X (space-separated):")
+    X = np.array(list(map(float, input().split())))
+
+    print(f"Enter {n} values for y (space-separated):")
+    y = np.array(list(map(float, input().split())))
+
+    return X, y
+
+
+# Main programs
+if __name__ == "__main__":
+    # Get user data
+    X, y = get_user_input()
+
+    # Ask for learning rate and iterations
+    print("Enter the learning rate (e.g., 0.01):")
+    learning_rate = float(input())
+
+    print("Enter the number of iterations:")
+    iterations = int(input())
+
+    # Train the model
+    m, b = linear_regression(X, y, learning_rate, iterations)
+
+    # Predict and display results
+    y_pred = m * X + b
+
+    print("\nResults:")
+    print(f"Slope (m): {m}")
+    print(f"Intercept (b): {b}")
+    print(f"Predicted y values: {y_pred}")
